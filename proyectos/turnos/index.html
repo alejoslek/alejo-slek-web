@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Veterinaria Mandarina · Perros y gatos en General Paz, Córdoba</title>
+<meta name="description" content="Veterinaria de barrio en General Paz, Córdoba: consultas, vacunas, cirugías, ecografías y peluquería para perros y gatos. Sacá tu turno online.">
+<meta name="theme-color" content="#ef7d2d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='17' r='13' fill='%23ef7d2d'/%3E%3Cpath d='M16 4c3-3 8-2 9 0-3 2-6 2-9 0z' fill='%232f8a4e'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Veterinaria Mandarina · General Paz, Córdoba">
+<meta property="og:description" content="Consultas, vacunas, cirugías y peluquería para perros y gatos. Sacá tu turno online.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<style>
+/* Identidad · Veterinaria Mandarina (General Paz, Córdoba)
+   Personalidad: cariñosa, confiable y simple · familias del barrio con perro o gato, desde el celular y a veces apuradas
+   Marca: #ef7d2d (mandarina, por el nombre) · acento #2b3f8f (azul marino: da la seriedad de salud) · base clara, neutra (no crema)
+   Letra: Nunito (títulos, redondeada y amable) + Nunito Sans (texto)
+   Firma: la medallita del collar (un círculo con su argolla) para precios, estado y números de paso
+   Tono: de vos, cercano, sin palabras técnicas; lo urgente siempre a la vista */
+:root{
+  --bg:#fbfaf8; --surface:#f4efe9; --fg:#221a14; --muted:#75665c; --line:#e6ddd5;
+  --accent:#2b3f8f; --accent-fg:#ffffff; --accent-text:#2b3f8f;
+  --ink:#17204a; --ink-fg:#f3f4fb; --ink-muted:#b3bad8;
+  --brand:#ef7d2d; --brand-100:#ffe1d0; --brand-200:#ffc6a6; --brand-300:#fda169; --brand-600:#a84f00; --brand-700:#863d00;
+  --leaf:#2f8a4e; --ok:#1d7a43; --closed:#a33a2b;
+  --font:"Nunito Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --font-display:"Nunito",var(--font);
+  --gutter:clamp(16px,4vw,40px);
+  --wrap:1160px;
+  --r:28px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#13151c; --surface:#1c1f29; --fg:#ecebe8; --muted:#a59d96; --line:#2e3240;
+  --accent:#fda169; --accent-fg:#1a1006; --accent-text:#fdb98c;
+  --ink:#0c1230; --brand-100:#3a2416; --brand-200:#5a3218; --brand-600:#fda169; --brand-700:#ffc6a6;
+  --ok:#5fd08f; --closed:#ff8f7d;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#13151c; --surface:#1c1f29; --fg:#ecebe8; --muted:#a59d96; --line:#2e3240;
+  --accent:#fda169; --accent-fg:#1a1006; --accent-text:#fdb98c;
+  --ink:#0c1230; --brand-100:#3a2416; --brand-200:#5a3218; --brand-600:#fda169; --brand-700:#ffc6a6;
+  --ok:#5fd08f; --closed:#ff8f7d;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;padding-bottom:84px;--fx-top:68px}
+h1,h2,h3,p,figure,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+img,svg{display:block;max-width:100%}
+a{color:var(--accent-text)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:-999px;top:8px;z-index:100;background:var(--fg);color:var(--bg);padding:10px 14px;border-radius:10px}
+.skip:focus{left:8px}
+
+/* Motor de desplazamiento · núcleo. Los estilos de cada efecto se suman aparte (references/efectos.md). */
+.fx-pin{--p:0;--pe:0;position:relative;height:var(--len,250vh)}
+.fx-stick{position:sticky;top:var(--fx-top,0px);height:calc(100vh - var(--fx-top,0px));height:calc(100svh - var(--fx-top,0px));overflow:hidden}
+.fx-track{display:flex;width:max-content;transform:translateX(var(--x,0px));will-change:transform}
+.fx-stack>*{position:sticky;top:calc(var(--fx-stack-top,14vh) + var(--i,0) * 22px);transform-origin:50% 0;transform:scale(calc(1 - var(--c,0) * .08));filter:brightness(calc(1 - var(--c,0) * .4))}
+.fx-ready .fx-in{opacity:0;transform:translateY(40px);transition:opacity .9s ease var(--d,0s),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.fx-ready .fx-in.is-in{opacity:1;transform:none}
+[data-words] .w{opacity:clamp(.14,calc((var(--p,1) * 1.25 * var(--n) - var(--i)) / 3),1)}
+canvas[data-frames]{display:block;width:100%;height:100%}
+@media (prefers-reduced-motion:reduce){
+  .fx-pin{height:auto!important}
+  .fx-stick{position:relative;top:auto;height:auto;min-height:100svh}
+  .fx-track{transform:none;width:auto;overflow-x:auto}
+  .fx-stack>*{position:relative;top:auto}
+  .fx-ready .fx-in{opacity:1;transform:none;transition:none}
+}
+
+/* ── Botones ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;border-radius:999px;border:0;
+  background:var(--accent);color:var(--accent-fg);font:800 17px/1 var(--font-display);text-decoration:none;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:21px;height:21px;flex:none}
+.btn-line{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 2px var(--line)}
+.btn-line:hover{box-shadow:inset 0 0 0 2px var(--fg)}
+
+/* ── Barra fija ── */
+.bar{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font:900 21px/1 var(--font-display);letter-spacing:-.01em}
+.brand svg{width:36px;height:36px}
+.bar nav{display:flex;align-items:center;gap:4px}
+.bar nav a{color:var(--fg);text-decoration:none;font-weight:700;font-size:16px;padding:9px 12px;border-radius:999px}
+.bar nav a:hover{background:var(--surface)}
+.bar nav .nav-cta{background:var(--brand);color:#2a1206;padding:10px 16px}
+@media (max-width:780px){.bar nav a:not(.nav-cta){display:none}}
+
+/* ── Portada en bloques ── */
+.hero{padding:clamp(20px,4vw,40px) 0 clamp(56px,9vh,96px)}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(0,auto);gap:clamp(12px,1.6vw,18px)}
+.tile{border-radius:var(--r);padding:clamp(22px,3vw,36px);position:relative;overflow:hidden}
+.t-main{grid-column:span 4;grid-row:span 2;background:var(--surface);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.t-main h1{font-family:var(--font-display);font-weight:900;font-size:clamp(40px,6.2vw,84px);line-height:.98;letter-spacing:-.035em;max-width:12ch}
+.t-main h1 em{font-style:normal;color:var(--brand-600)}
+.t-main p{max-width:40ch;color:var(--muted);font-size:clamp(18px,1.6vw,20px)}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.t-status{grid-column:span 2;background:var(--bg);box-shadow:inset 0 0 0 2px var(--line);display:flex;flex-direction:column;gap:10px}
+.status{display:flex;align-items:center;gap:12px;font:900 24px/1.1 var(--font-display)}
+.status .dot{width:16px;height:16px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 6px color-mix(in srgb,var(--ok) 20%,transparent);flex:none}
+.status.is-closed .dot{background:var(--closed);box-shadow:0 0 0 6px color-mix(in srgb,var(--closed) 20%,transparent)}
+.status.is-closed{color:var(--closed)}
+.status:not(.is-closed){color:var(--ok)}
+.t-status small{color:var(--muted);font-size:16px}
+.hours{display:grid;gap:2px;font-size:16px;font-variant-numeric:tabular-nums;margin-top:auto}
+.hours div{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-top:1px dashed var(--line)}
+.hours b{font-weight:700}
+.hours div.today{color:var(--fg);font-weight:700}
+.t-pets{grid-column:span 2;background:var(--brand);min-height:220px;padding:0}
+.t-pets svg{position:absolute;inset:0;width:100%;height:100%}
+.t-urg{grid-column:span 3;background:var(--ink);color:var(--ink-fg);display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center}
+.t-urg .ic{grid-row:span 2;width:56px;height:56px;border-radius:50%;background:var(--brand);color:#2a1206;display:grid;place-items:center}
+.t-urg .ic svg{width:28px;height:28px}
+.t-urg h2{font:900 23px/1.15 var(--font-display)}
+.t-urg p{color:var(--ink-muted);font-size:16.5px}
+.t-urg a{color:var(--ink-fg);font-weight:800}
+.t-pay{grid-column:span 3;background:var(--surface);display:flex;flex-direction:column;justify-content:center;gap:10px}
+.t-pay h2{font:900 21px/1.2 var(--font-display)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips li{padding:6px 14px;border-radius:999px;background:var(--bg);font-weight:700;font-size:15.5px}
+@media (max-width:960px){.t-main{grid-column:span 6;grid-row:auto}.t-status,.t-pets{grid-column:span 3}.t-urg,.t-pay{grid-column:span 6}}
+@media (max-width:600px){.t-status,.t-pets{grid-column:span 6}.t-pets{min-height:200px}.t-status{order:-1}.t-main{order:-2}}
+
+/* ── Secciones ── */
+.sec{padding:clamp(64px,11vh,120px) 0}
+.sec-head{display:grid;gap:12px;margin-bottom:clamp(30px,5vh,52px);max-width:46ch}
+.sec h2.big{font-family:var(--font-display);font-weight:900;font-size:clamp(34px,4.6vw,58px);line-height:1.02;letter-spacing:-.03em}
+.sec-head p{color:var(--muted)}
+
+/* Servicios */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,18px)}
+.svc{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-content:start;padding:24px;border-radius:var(--r);background:var(--surface)}
+.svc .ic{grid-row:span 2;width:52px;height:52px;border-radius:16px;background:var(--brand-100);color:var(--brand-700);display:grid;place-items:center}
+.svc .ic svg{width:28px;height:28px}
+.svc h3{font:800 21px/1.2 var(--font-display);align-self:end}
+.svc p{color:var(--muted);font-size:16.5px;line-height:1.5}
+@media (max-width:900px){.services{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.services{grid-template-columns:1fr}}
+
+/* Primera visita: tarjetas que se apilan (efecto 7) */
+.visit{background:var(--ink);color:var(--ink-fg)}
+.visit .sec-head p{color:var(--ink-muted)}
+.visit-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,5vw,72px);align-items:start}
+.visit-grid .sec-head{position:sticky;top:calc(var(--fx-top) + 10vh)}
+.fx-stack{display:grid;gap:22px;--fx-stack-top:calc(var(--fx-top) + 7vh)}
+.step{--i:0;min-height:300px;border-radius:var(--r);padding:clamp(24px,3vw,38px);background:#f3f4fb;color:#17204a;display:flex;flex-direction:column;gap:14px;box-shadow:0 -12px 40px -24px rgba(0,0,0,.6)}
+.step:nth-child(2){--i:1;background:#ffe1d0}
+.step:nth-child(3){--i:2;background:#d8eedf}
+.step h3{font:900 clamp(26px,3vw,34px)/1.08 var(--font-display);letter-spacing:-.02em}
+.step p{font-size:17.5px;color:#3b3f55;max-width:40ch}
+.tag{position:relative;width:62px;height:62px;border-radius:50%;background:#17204a;color:#fff;display:grid;place-items:center;font:900 26px var(--font-display)}
+.tag::before{content:"";position:absolute;top:-9px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;border:4px solid #17204a;background:transparent}
+@media (max-width:860px){.visit-grid{grid-template-columns:1fr}.visit-grid .sec-head{position:static}.step{min-height:240px}}
+
+/* Precios con medallita */
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,5vw,64px)}
+.price{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.price span{flex:1}
+.price b{display:block;font-weight:700}
+.price small{display:block;color:var(--muted);font-size:15.5px}
+.medal{position:relative;flex:none;min-width:118px;padding:10px 14px;border-radius:999px;background:var(--brand-100);color:var(--fg);text-align:center;font:900 19px/1 var(--font-display);font-variant-numeric:tabular-nums}
+.medal::before{content:"";position:absolute;left:-7px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;border:3px solid var(--brand-300);background:var(--bg)}
+.price-note{margin-top:22px;color:var(--muted);font-size:16px}
+@media (max-width:760px){.prices{grid-template-columns:1fr}.medal{min-width:0;padding:9px 14px 9px 19px;font-size:17px}.price{gap:14px}}
+/* Gato que parpadea y mueve la cola (liviano; se apaga con "reducir movimiento") */
+.t-pets .ojos{transform-box:fill-box;transform-origin:center;animation:parpadeo 6s infinite}
+@keyframes parpadeo{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.t-pets .cola{transform-box:fill-box;transform-origin:0% 88%;animation:cola 3.2s ease-in-out infinite alternate}
+@keyframes cola{from{rotate:-4deg}to{rotate:6deg}}
+@media (prefers-reduced-motion:reduce){.t-pets .ojos,.t-pets .cola{animation:none}}
+@media (max-width:520px){.t-main .acts .btn{flex:1 1 100%}}
+.price .medal{flex:none}
+.map{margin-top:24px;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.map iframe{display:block;width:100%;height:230px;border:0}
+
+/* Equipo */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
+.person{display:grid;gap:8px;align-content:start}
+.person .face{aspect-ratio:1;border-radius:var(--r);overflow:hidden;background:var(--brand-100)}
+.person:nth-child(2) .face{background:#dfe4f7}
+.person:nth-child(3) .face{background:#d8eedf}
+.person .face svg{width:100%;height:100%}
+.person h3{font:800 22px/1.2 var(--font-display);margin-top:6px}
+.person p{color:var(--muted);font-size:16.5px;line-height:1.45}
+@media (max-width:760px){.team{grid-template-columns:1fr 1fr}.person:nth-child(3){grid-column:span 2;grid-template-columns:140px 1fr;align-items:center;column-gap:16px}.person:nth-child(3) .face{grid-row:span 3}}
+:root[data-theme="dark"] .person .face{filter:brightness(.92)}
+
+/* Preguntas */
+.faq{display:grid;gap:10px;max-width:820px}
+.faq details{border-radius:20px;background:var(--surface);padding:0 22px}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font:800 19px/1.3 var(--font-display)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:30px;height:30px;border-radius:50%;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef7d2d' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M12 6v12M6 12h12'/%3E%3C/svg%3E") center/16px no-repeat;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 20px;color:var(--muted);max-width:62ch}
+
+/* Turno */
+.turno{background:var(--surface)}
+.turno-grid{display:grid;grid-template-columns:1fr 1.1fr;grid-template-areas:"head agenda" "info agenda";grid-template-rows:auto 1fr;gap:0 clamp(28px,5vw,72px);align-items:start}
+.turno-head{grid-area:head}.turno-info{grid-area:info}
+.where{display:grid;gap:18px;margin-top:8px}
+.where div{display:grid;grid-template-columns:28px 1fr;gap:14px}
+.where svg{width:26px;height:26px;color:var(--brand-600)}
+.where b{display:block}
+.where span span{color:var(--muted);font-size:16.5px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--bg);border-radius:var(--r);padding:clamp(20px,3vw,34px)}
+.form .full{grid-column:1/-1}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+legend{font-weight:700;font-size:16px;margin-bottom:8px;padding:0}
+.pick{display:flex;flex-wrap:wrap;gap:8px}
+.pick label{position:relative}
+.pick input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.pick span{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:999px;box-shadow:inset 0 0 0 2px var(--line);font-weight:700;font-size:16.5px}
+.pick input:checked+span{background:var(--brand);color:#2a1206;box-shadow:none}
+.pick input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
+.field{display:grid;gap:6px}
+.field label{font-weight:700;font-size:16px}
+.field label small{font-weight:400;color:var(--muted)}
+input[type=text],select{width:100%;min-height:52px;padding:0 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);font:400 17px var(--font)}
+input[type=text]:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+.form .btn{grid-column:1/-1;width:100%}
+.form-note{grid-column:1/-1;color:var(--muted);font-size:15px;text-align:center}
+.agenda{grid-area:agenda;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:clamp(8px,1.4vw,14px)}
+.agenda iframe{display:block;width:100%;height:min(720px,calc(100svh - 96px));min-height:540px;border:0;border-radius:calc(var(--r) - 8px);background:#fff}
+.agenda-note{margin:12px 8px 4px;color:var(--muted);font-size:15px;text-align:center}
+.agenda-note a{color:var(--accent-text);font-weight:700}
+@media (max-width:860px){.turno-grid{grid-template-columns:1fr;grid-template-areas:"head" "agenda" "info";grid-template-rows:auto}.turno-info{margin-top:36px}}
+@media (max-width:460px){.form{grid-template-columns:1fr}}
+
+/* Pie */
+.foot{background:var(--ink);color:var(--ink-fg);padding:52px 0 40px}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+.foot .brand{color:var(--ink-fg)}
+.foot p,.foot li{color:var(--ink-muted);font-size:16px}
+.foot a{color:var(--ink-fg)}
+.foot ul{display:grid;gap:6px}
+
+/* WhatsApp flotante */
+.wa-float{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:60;
+  display:flex;align-items:center;gap:8px;min-height:52px;padding:0 18px 0 14px;border-radius:999px;
+  background:#25d366;color:#06301a;font-weight:800;font-size:16px;text-decoration:none;box-shadow:0 10px 30px -8px rgba(0,0,0,.35)}
+.wa-float svg{width:26px;height:26px}
+.wa-float:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.wa-float{transition:opacity .2s,transform .2s}
+.wa-float.al-costado{opacity:0;transform:translateY(16px);pointer-events:none}
+@media (max-width:600px){.wa-float span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.wa-float{padding:0 13px}}
+</style>
+</head>
+<body>
+<div id="demo-aviso" role="note" style="all:initial;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:center;padding:10px 16px;background:#141414;color:#fff;font:500 14px/1.4 -apple-system,'Segoe UI',Roboto,sans-serif;text-align:center;position:relative;z-index:2147483000">
+  <span>Proyecto de práctica de Alejo Slek: el negocio y sus datos son ficticios.</span>
+  <a href="../../" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px">← Volver</a>
+</div>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Veterinaria Mandarina, inicio">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="22" r="16" fill="#ef7d2d"/><path d="M20 6c4-4 10-3 12 0-4 3-8 3-12 0z" fill="#2f8a4e"/><g fill="#2a1206"><ellipse cx="20" cy="26" rx="5" ry="4"/><circle cx="13.5" cy="19.5" r="2.2"/><circle cx="17.5" cy="16" r="2.2"/><circle cx="22.5" cy="16" r="2.2"/><circle cx="26.5" cy="19.5" r="2.2"/></g></svg>
+      Mandarina
+    </a>
+    <nav aria-label="Secciones">
+      <a href="#servicios">Servicios</a>
+      <a href="#precios">Precios</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="nav-cta" href="#turno">Pedir turno</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="hero" aria-labelledby="titulo">
+    <div class="wrap bento">
+      <div class="tile t-main">
+        <h1 id="titulo">La veterinaria del barrio, para <em>perros y gatos.</em></h1>
+        <div style="display:grid;gap:24px">
+          <p>En General Paz, Córdoba. Consultas, vacunas, cirugías y peluquería, con turno o por orden de llegada.</p>
+          <div class="acts">
+            <a class="btn" href="#turno">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18M9 15l2 2 4-4"/></svg>
+              Sacá tu turno
+            </a>
+            <a class="btn btn-line" href="#demo" data-demo="la llamada">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+              Llamar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile t-status" aria-live="polite">
+        <p class="status" id="estado"><span class="dot" aria-hidden="true"></span><span id="estado-txt">Horarios</span></p>
+        <small id="estado-sub">Lunes a viernes de 9 a 13 y de 16 a 20.30. Sábados de 9 a 13.</small>
+        <div class="hours" id="horas">
+          <div data-d="1,2,3,4,5"><span>Lun a vie</span><b>9–13 · 16–20.30</b></div>
+          <div data-d="6"><span>Sábado</span><b>9–13</b></div>
+          <div data-d="0"><span>Domingo</span><b>Cerrado</b></div>
+        </div>
+      </div>
+
+      <div class="tile t-pets" aria-hidden="true">
+        <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMax slice">
+          <circle cx="330" cy="40" r="70" fill="#f59a55"/>
+          <!-- perro -->
+          <g transform="translate(70 70)">
+            <ellipse cx="80" cy="190" rx="90" ry="14" fill="#c85f17" opacity=".5"/>
+            <path d="M30 190 C20 130 40 100 80 100 C120 100 140 130 130 190Z" fill="#fff4ea"/>
+            <circle cx="80" cy="70" r="46" fill="#fff4ea"/>
+            <path d="M38 50 C18 60 16 100 32 112 C44 100 46 72 46 58Z" fill="#7a4a2a"/>
+            <path d="M122 50 C142 60 144 100 128 112 C116 100 114 72 114 58Z" fill="#7a4a2a"/>
+            <circle cx="64" cy="66" r="5" fill="#2a1206"/><circle cx="96" cy="66" r="5" fill="#2a1206"/>
+            <ellipse cx="80" cy="84" rx="9" ry="6.5" fill="#2a1206"/>
+            <path d="M80 90 v8 M70 100 q10 8 20 0" fill="none" stroke="#2a1206" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="80" cy="128" r="11" fill="#2b3f8f"/><circle cx="80" cy="114" r="4" fill="none" stroke="#2b3f8f" stroke-width="3"/>
+          </g>
+          <!-- gato -->
+          <g transform="translate(230 110)">
+            <path d="M18 150 C8 100 26 76 58 76 C90 76 108 100 98 150Z" fill="#2a2f45"/>
+            <path class="cola" d="M98 140 C130 140 140 110 126 92" fill="none" stroke="#2a2f45" stroke-width="12" stroke-linecap="round"/>
+            <path d="M22 30 L26 -6 L48 16Z M94 30 L90 -6 L68 16Z" fill="#2a2f45"/>
+            <circle cx="58" cy="44" r="38" fill="#2a2f45"/>
+            <g class="ojos"><ellipse cx="44" cy="42" rx="6" ry="7" fill="#f5d36b"/><ellipse cx="72" cy="42" rx="6" ry="7" fill="#f5d36b"/>
+            <ellipse cx="44" cy="43" rx="2" ry="5" fill="#111"/><ellipse cx="72" cy="43" rx="2" ry="5" fill="#111"/></g>
+            <path d="M54 56 h8 l-4 5z" fill="#f2a3a0"/>
+            <path d="M30 58 h-18 M30 64 h-16 M86 58 h18 M86 64 h16" stroke="#8d93ad" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="tile t-urg">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <h2>¿Es una urgencia?</h2>
+        <p>Llamanos antes de venir, así te esperamos preparados: <a href="#demo" data-demo="la llamada">351 000-0000</a>. Atendemos el teléfono todos los días de 8 a 22.</p>
+      </div>
+
+      <div class="tile t-pay">
+        <h2>Formas de pago</h2>
+        <ul class="chips"><li>Efectivo</li><li>Débito</li><li>Crédito en 1 pago</li><li>Transferencia</li><li>Mercado Pago</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="servicios" aria-labelledby="t-serv" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head fx-in">
+        <h2 class="big" id="t-serv">Todo lo que tu mascota necesita, a dos cuadras</h2>
+      </div>
+      <ul class="services">
+        <li class="svc fx-in"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v6a5 5 0 0 0 10 0V3M5 3h2M13 3h2M10 14v2a5 5 0 0 0 10 0v-1"/><circle cx="20" cy="13" r="2"/></svg></span><h3>Consultas</h3><p>Control general, chequeos de cachorros y gatitos, y seguimiento de tratamientos.</p></li>
+        <li class="svc fx-in" style="--d:.06s"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2l4 4M20 4l-9 9M14 7l3 3M8 13l3 3-6 6-3-3z"/></svg></span><h3>Vacunas</h3><p>Plan completo para cachorros y refuerzos anuales. Te anotamos todo en la libreta.</p></li>
+        <li class="svc fx-in" style="--d:.12s"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></span><h3>Castraciones y cirugías</h3><p>Con turno programado, anestesia controlada y seguimiento después de la operación.</p></li>
+        <li class="svc fx-in"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 13c2-4 4-4 5-2s3 2 5-2M8 21h8M12 17v4"/></svg></span><h3>Ecografías y análisis</h3><p>Ecografía en el consultorio. Los análisis de sangre los enviamos a laboratorio.</p></li>
+        <li class="svc fx-in" style="--d:.06s"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></svg></span><h3>Peluquería y baño</h3><p>Baño, corte y uñas para perros de todos los tamaños. Con turno, de martes a sábado.</p></li>
+        <li class="svc fx-in" style="--d:.12s"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><h3>Visitas a domicilio</h3><p>En General Paz y barrios vecinos, para mascotas mayores o que se estresan al salir.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec visit" aria-labelledby="t-visit">
+    <div class="wrap visit-grid">
+      <div class="sec-head">
+        <h2 class="big" id="t-visit">¿Primera vez? Así es la visita</h2>
+        <p>Sin vueltas y sin apuro. Si tu mascota se pone nerviosa, avisanos: buscamos un horario tranquilo.</p>
+      </div>
+      <ol class="fx-stack">
+        <li class="step"><span class="tag" aria-hidden="true">1</span><h3>Sacá turno o vení directo</h3><p>Desde la web elegís el día y la hora. Sin turno también te atendemos, por orden de llegada.</p></li>
+        <li class="step"><span class="tag" aria-hidden="true">2</span><h3>Traé la libreta sanitaria</h3><p>Si tiene vacunas o estudios anteriores, mejor. Si no tiene libreta, se la hacemos en el momento.</p></li>
+        <li class="step"><span class="tag" aria-hidden="true">3</span><h3>Revisamos y te explicamos todo</h3><p>Te llevás por escrito qué tiene, qué hacer en casa y cuándo volver. Las dudas, después, por WhatsApp.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="precios" aria-labelledby="t-precios">
+    <div class="wrap">
+      <div class="sec-head fx-in">
+        <h2 class="big" id="t-precios">Precios claros, antes de venir</h2>
+        <p>Valores de referencia de octubre de 2026. Las cirugías y los estudios se confirman después de la consulta.</p>
+      </div>
+      <ul class="prices fx-in">
+        <li class="price"><span><b>Consulta</b><small>Perro o gato, con revisación completa</small></span><span class="medal">$18.000</span></li>
+        <li class="price"><span><b>Vacuna séxtuple</b><small>Perros, incluye la aplicación</small></span><span class="medal">$22.000</span></li>
+        <li class="price"><span><b>Vacuna triple felina</b><small>Gatos, incluye la aplicación</small></span><span class="medal">$21.000</span></li>
+        <li class="price"><span><b>Vacuna antirrábica</b><small>Perros y gatos</small></span><span class="medal">$14.000</span></li>
+        <li class="price"><span><b>Castración</b><small>Desde, según especie y peso</small></span><span class="medal">$65.000</span></li>
+        <li class="price"><span><b>Ecografía</b><small>Abdominal</small></span><span class="medal">$30.000</span></li>
+        <li class="price"><span><b>Baño y corte</b><small>Desde, según tamaño y pelo</small></span><span class="medal">$16.000</span></li>
+        <li class="price"><span><b>Visita a domicilio</b><small>Incluye la consulta</small></span><span class="medal">$28.000</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="t-equipo" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head fx-in">
+        <h2 class="big" id="t-equipo">Quiénes te atienden</h2>
+        <p>Un equipo chico, que conoce a cada paciente por su nombre.</p>
+      </div>
+      <div class="team">
+        <article class="person fx-in">
+          <div class="face" aria-hidden="true"><svg viewBox="0 0 200 200"><circle cx="100" cy="88" r="40" fill="#e9b48f"/><path d="M58 84 C56 40 144 40 142 84 C140 64 120 54 100 56 C80 54 60 64 58 84Z" fill="#5a3420"/><path d="M58 84 C52 110 60 130 66 136 L70 96Z M142 84 C148 110 140 130 134 136 L130 96Z" fill="#5a3420"/><path d="M40 200 C44 150 70 132 100 132 C130 132 156 150 160 200Z" fill="#2b3f8f"/><path d="M84 134 L100 158 L116 134" fill="#fff"/><circle cx="86" cy="90" r="3.5" fill="#2a1206"/><circle cx="114" cy="90" r="3.5" fill="#2a1206"/><path d="M90 106 q10 8 20 0" fill="none" stroke="#2a1206" stroke-width="3" stroke-linecap="round"/></svg></div>
+          <h3>Lucía</h3><p>Veterinaria, clínica general. La que más sabe de gatos.</p>
+        </article>
+        <article class="person fx-in" style="--d:.08s">
+          <div class="face" aria-hidden="true"><svg viewBox="0 0 200 200"><circle cx="100" cy="88" r="40" fill="#c98e66"/><path d="M60 76 C62 46 138 46 140 76 C126 64 74 64 60 76Z" fill="#2a1d16"/><path d="M70 104 C74 128 126 128 130 104 C120 116 80 116 70 104Z" fill="#2a1d16"/><path d="M40 200 C44 150 70 132 100 132 C130 132 156 150 160 200Z" fill="#2f8a4e"/><circle cx="86" cy="88" r="3.5" fill="#2a1206"/><circle cx="114" cy="88" r="3.5" fill="#2a1206"/><path d="M92 104 q8 5 16 0" fill="none" stroke="#2a1206" stroke-width="3" stroke-linecap="round"/></svg></div>
+          <h3>Tomás</h3><p>Veterinario, cirugías y ecografías.</p>
+        </article>
+        <article class="person fx-in" style="--d:.16s">
+          <div class="face" aria-hidden="true"><svg viewBox="0 0 200 200"><circle cx="100" cy="88" r="40" fill="#f0c7a5"/><path d="M60 84 C58 44 142 44 140 84 C130 66 70 66 60 84Z" fill="#c4542b"/><circle cx="140" cy="62" r="18" fill="#c4542b"/><path d="M40 200 C44 150 70 132 100 132 C130 132 156 150 160 200Z" fill="#ef7d2d"/><circle cx="86" cy="90" r="3.5" fill="#2a1206"/><circle cx="114" cy="90" r="3.5" fill="#2a1206"/><path d="M88 106 q12 9 24 0" fill="none" stroke="#2a1206" stroke-width="3" stroke-linecap="round"/></svg></div>
+          <h3>Martina</h3><p>Peluquería canina. Paciencia infinita con los que no quieren bañarse.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="preguntas" aria-labelledby="t-faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head fx-in"><h2 class="big" id="t-faq">Lo que más nos preguntan</h2></div>
+      <div class="faq">
+        <details><summary>¿Atienden sin turno?</summary><p>Sí, en el horario de atención y por orden de llegada. Con turno esperás menos. Las cirugías y la peluquería son siempre con turno.</p></details>
+        <details><summary>¿Atienden otras mascotas además de perros y gatos?</summary><p>Conejos y hurones, sí. Para aves y reptiles te recomendamos un veterinario especialista.</p></details>
+        <details><summary>¿Qué hago si es de noche y es urgente?</summary><p>Hasta las 22 llamanos y te decimos qué hacer. Más tarde, andá a una guardia veterinaria de 24 horas: no esperes a la mañana.</p></details>
+        <details><summary>¿Hay que llevarlo en ayunas para la castración?</summary><p>Sí. Cuando sacás el turno te mandamos por WhatsApp las indicaciones para el día anterior.</p></details>
+        <details><summary>¿Puedo pagar en cuotas?</summary><p>Las cirugías se pueden pagar con tarjeta de crédito. Consultanos por las cuotas vigentes.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec turno" id="turno" aria-labelledby="t-turno">
+    <div class="wrap turno-grid">
+      <div class="sec-head turno-head fx-in">
+        <h2 class="big" id="t-turno">Sacá tu turno</h2>
+        <p>Elegí el día y la hora que te quedan bien. Te llega la confirmación por mail y el turno queda anotado en nuestra agenda.</p>
+      </div>
+      <div class="agenda fx-in">
+        <!-- Agenda de citas de Google Calendar (página de reservas intercalada). Sólo es un marco: no suma código de Google a esta página. -->
+        <iframe title="Agenda de turnos de Veterinaria Mandarina" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2tdVy5m-rWNejsHxSkFozp7CfNnNWgY1-jAisas244h0tjy0QVbotqsEg6orpIwUVFD8W4Ty3P?gv=true" loading="lazy"></iframe>
+        <p class="agenda-note"><b>Es una demo:</b> el turno es de prueba y le llega a Alejo Slek, no a una veterinaria. No hace falta tener cuenta de Google. ¿No se ve la agenda? <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2tdVy5m-rWNejsHxSkFozp7CfNnNWgY1-jAisas244h0tjy0QVbotqsEg6orpIwUVFD8W4Ty3P" target="_blank" rel="noopener">Abrila en otra pestaña</a>.</p>
+      </div>
+      <div class="turno-info">
+        <div class="where fx-in">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><span><b>Consultas y vacunas, de 30 minutos</b><span>Cirugías y peluquería, mejor por WhatsApp: te pasamos las indicaciones.</span></span></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><b>Barrio General Paz, Córdoba</b><span>A dos cuadras de la plaza. Hay lugar para estacionar en la cuadra.</span></span></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Lunes a viernes de 9 a 13 y de 16 a 20.30</b><span>Sábados de 9 a 13. Domingos cerrado.</span></span></div>
+        </div>
+        <div class="acts" style="margin-top:24px">
+          <a class="btn btn-line" href="#demo" data-demo="Google Maps" target="_blank" rel="noopener">Ver en el mapa</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div style="display:grid;gap:12px;max-width:34ch">
+      <a class="brand" href="#"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="22" r="16" fill="#ef7d2d"/><path d="M20 6c4-4 10-3 12 0-4 3-8 3-12 0z" fill="#2f8a4e"/><g fill="#2a1206"><ellipse cx="20" cy="26" rx="5" ry="4"/><circle cx="13.5" cy="19.5" r="2.2"/><circle cx="17.5" cy="16" r="2.2"/><circle cx="22.5" cy="16" r="2.2"/><circle cx="26.5" cy="19.5" r="2.2"/></g></svg>Veterinaria Mandarina</a>
+      <p>Perros y gatos en barrio General Paz, Córdoba. Los profesionales tienen su matrícula a la vista en el consultorio.</p>
+    </div>
+    <ul>
+      <li>WhatsApp y teléfono: <a href="#demo" data-demo="WhatsApp" target="_blank" rel="noopener">351 000-0000</a></li>
+      <li>Instagram: <a href="#demo" data-demo="Instagram" target="_blank" rel="noopener">@cuenta.de.ejemplo</a></li>
+      <li>Urgencias de noche: guardia veterinaria de 24 horas</li>
+    </ul>
+  </div>
+</footer>
+
+<a class="wa-float" href="#demo" data-demo="WhatsApp" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-3.7A8.5 8.5 0 1 1 20 11.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+/* Motor de desplazamiento · sin librerías.
+   Lee clases y atributos data-* de la página; las animaciones las hace el CSS con
+   la variable --p (de 0 a 1), que este motor actualiza mientras se baja.
+   Uso normal: scripts/incrustar.py lo pega al final del <body>.
+   En React/Vue/Next: cargarlo con <script src="motor.js" data-manual> y llamar
+   window.Desplazamiento.init() al montar la página; init() devuelve la función para desmontar. */
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const smooth = t => t * t * (3 - 2 * t);
+  const decimals = s => ((s || '').split('.')[1] || '').length;
+
+  function init(root = document) {
+    const $$ = s => [...root.querySelectorAll(s)];
+    const lang = document.documentElement.lang || 'es';
+    const pins = $$('.fx-pin');
+    const tracks = pins.filter(s => s.querySelector('.fx-track'));
+    const views = $$('.fx-view');
+    const stacks = $$('.fx-stack');
+    document.documentElement.classList.add('fx-ready');
+
+    // Texto que se enciende: cada palabra en un <span class="w"> con su índice.
+    $$('[data-words]').forEach(el => {
+      if (el.querySelector('.w')) return;
+      const ws = el.textContent.trim().split(/\s+/);
+      el.textContent = '';
+      ws.forEach((w, i) => {
+        const s = document.createElement('span');
+        s.className = 'w';
+        s.style.setProperty('--i', i);
+        s.textContent = w;
+        el.append(s, ' ');
+      });
+      el.style.setProperty('--n', ws.length);
+    });
+
+    stacks.forEach(list => [...list.children].forEach((c, i) => c.style.setProperty('--i', i)));
+
+    // Secuencia de fotos en un <canvas data-frames>.
+    const seqs = $$('canvas[data-frames]').map(cv => {
+      const n = +cv.dataset.frames, pad = +(cv.dataset.pad || 0), start = +(cv.dataset.start || 0);
+      const s = { cv, n, sec: cv.closest('.fx-pin'), a: +(cv.dataset.a || 0), b: +(cv.dataset.b || 1), cover: cv.dataset.fit === 'cover', last: -1 };
+      s.imgs = Array.from({ length: n }, (_, i) => {
+        const im = new Image();
+        im.onload = () => { s.last = -1; draw(s); };
+        im.src = cv.dataset.src.replace('{i}', String(i + start).padStart(pad, '0'));
+        return im;
+      });
+      return s;
+    });
+
+    function draw(s) {
+      const cv = s.cv, dpr = Math.min(2, devicePixelRatio || 1);
+      const W = Math.round(cv.clientWidth * dpr), H = Math.round(cv.clientHeight * dpr);
+      if (!W || !H) return;
+      if (cv.width !== W || cv.height !== H) { cv.width = W; cv.height = H; s.last = -1; }
+      const p = s.sec ? s.sec._p || 0 : 0;
+      const want = Math.round(clamp((p - s.a) / Math.max(1e-6, s.b - s.a), 0, 1) * (s.n - 1));
+      let i = -1;
+      for (let d = 0; d < s.n && i < 0; d++) {
+        if (want - d >= 0 && s.imgs[want - d].naturalWidth) i = want - d;
+        else if (want + d < s.n && s.imgs[want + d].naturalWidth) i = want + d;
+      }
+      if (i < 0 || i === s.last) return;
+      s.last = i;
+      const im = s.imgs[i], ctx = cv.getContext('2d');
+      const r = (s.cover ? Math.max : Math.min)(W / im.naturalWidth, H / im.naturalHeight);
+      const w = im.naturalWidth * r, h = im.naturalHeight * r;
+      ctx.clearRect(0, 0, W, H);
+      ctx.drawImage(im, (W - w) / 2, (H - h) / 2, w, h);
+    }
+
+    // Galería de costado: la sección mide lo que tiene que correr la pista.
+    function size() {
+      tracks.forEach(sec => {
+        const tr = sec.querySelector('.fx-track'), st = sec.querySelector('.fx-stick') || sec;
+        sec._dist = reduce ? 0 : Math.max(0, Math.max(tr.offsetWidth, tr.scrollWidth) - st.clientWidth);
+        if (!reduce) sec.style.height = `calc(100svh + ${sec._dist}px)`;
+        sec._p = undefined;
+      });
+    }
+
+    function update() {
+      const vh = innerHeight;
+      pins.forEach(sec => {
+        const r = sec.getBoundingClientRect();
+        const p = reduce ? +(sec.dataset.rest || 1) : clamp(-r.top / Math.max(1, r.height - vh), 0, 1);
+        if (sec._p === p) return;
+        sec._p = p;
+        sec.style.setProperty('--p', p.toFixed(4));
+        sec.style.setProperty('--pe', smooth(p).toFixed(4));
+        if (sec._dist) sec.style.setProperty('--x', `${(-p * sec._dist).toFixed(1)}px`);
+      });
+      views.forEach(el => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--v', (reduce ? 0.5 : clamp((vh - r.top) / (vh + r.height), 0, 1)).toFixed(4));
+      });
+      stacks.forEach(list => {
+        const cards = [...list.children];
+        cards.forEach((c, i) => {
+          const next = cards[i + 1];
+          let v = 0;
+          if (next && !reduce) {
+            const top = c.getBoundingClientRect().top, h = c.offsetHeight;
+            v = clamp((top + h - next.getBoundingClientRect().top) / Math.max(1, h - 22), 0, 1);
+          }
+          c.style.setProperty('--c', v.toFixed(3));
+        });
+      });
+      seqs.forEach(draw);
+    }
+
+    // Aparición al entrar y números que cuentan.
+    const fmt = (v, d) => v.toLocaleString(lang, { minimumFractionDigits: d, maximumFractionDigits: d });
+    function count(el) {
+      const to = parseFloat(el.dataset.count), d = decimals(el.dataset.count);
+      if (reduce) { el.textContent = fmt(to, d); return; }
+      const t0 = performance.now(), D = +(el.dataset.ms || 1400);
+      const f = now => {
+        const t = clamp((now - t0) / D, 0, 1);
+        el.textContent = fmt(to * (1 - Math.pow(1 - t, 3)), d);
+        if (t < 1) requestAnimationFrame(f);
+      };
+      requestAnimationFrame(f);
+    }
+    if (!reduce) $$('[data-count]').forEach(el => (el.textContent = fmt(0, decimals(el.dataset.count))));
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      el.classList.add('is-in');
+      (el.matches('[data-count]') ? [el] : [...el.querySelectorAll('[data-count]')]).forEach(count);
+      io.unobserve(el);
+    }), { rootMargin: '0px 0px -12% 0px' });
+    $$('.fx-in, [data-count]').filter(el => el.matches('.fx-in') || !el.closest('.fx-in')).forEach(el => io.observe(el));
+
+    let queued = false;
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => { queued = false; update(); });
+    };
+    const onResize = () => { size(); seqs.forEach(s => (s.last = -1)); onScroll(); };
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    addEventListener('resize', onResize);
+    const ro = new ResizeObserver(onResize);
+    tracks.forEach(sec => ro.observe(sec.querySelector('.fx-track')));
+    if (document.fonts) document.fonts.ready.then(onResize);
+    size();
+    update();
+    return () => {
+      document.removeEventListener('scroll', onScroll, { capture: true });
+      removeEventListener('resize', onResize);
+      ro.disconnect();
+      io.disconnect();
+    };
+  }
+
+  window.Desplazamiento = { init };
+  const me = document.currentScript;
+  if (!(me && me.hasAttribute('data-manual'))) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => init(), { once: true });
+    else init();
+  }
+})();
+</script>
+<script>
+/* "Abierto ahora": calcula el estado con la hora de Córdoba, no la del teléfono */
+(() => {
+  const H = {1:[[540,780],[960,1230]],2:[[540,780],[960,1230]],3:[[540,780],[960,1230]],4:[[540,780],[960,1230]],5:[[540,780],[960,1230]],6:[[540,780]],0:[]};
+  const DIAS = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  const hm = m => `${Math.floor(m / 60)}${m % 60 ? '.' + String(m % 60).padStart(2, '0') : ''}`;
+  const update = () => {
+    const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', {timeZone: 'America/Argentina/Cordoba', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'})
+      .formatToParts(new Date()).map(x => [x.type, x.value]));
+    const d = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday), m = +p.hour * 60 + +p.minute;
+    const ahora = H[d].find(([a, b]) => m >= a && m < b);
+    const el = document.getElementById('estado'), txt = document.getElementById('estado-txt'), sub = document.getElementById('estado-sub');
+    document.querySelectorAll('#horas [data-d]').forEach(r => r.classList.toggle('today', r.dataset.d.split(',').includes(String(d))));
+    if (ahora) { el.classList.remove('is-closed'); txt.textContent = 'Abierto ahora'; sub.textContent = `Hoy cerramos a las ${hm(ahora[1])}.`; return; }
+    el.classList.add('is-closed'); txt.textContent = 'Ahora cerrado';
+    const hoy = H[d].find(([a]) => a > m);
+    if (hoy) { sub.textContent = `Abrimos hoy a las ${hm(hoy[0])}.`; return; }
+    for (let i = 1; i <= 7; i++) { const dd = (d + i) % 7; if (H[dd].length) { sub.textContent = `Abrimos ${i === 1 ? 'mañana' : 'el ' + DIAS[dd]} a las ${hm(H[dd][0][0])}.`; break; } }
+  };
+  update(); setInterval(update, 60000);
+})();
+
+</script>
+
+<div id="demo-toast" role="status" aria-live="polite" style="all:initial;position:fixed;left:50%;bottom:24px;transform:translateX(-50%);max-width:min(92vw,420px);padding:12px 16px;border-radius:12px;background:#141414;color:#fff;font:500 15px/1.4 -apple-system,'Segoe UI',Roboto,sans-serif;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .25s;z-index:2147483001"></div>
+<script>
+/* Agenda: mientras está a la vista, el WhatsApp flotante se esconde para no tapar el botón "Reservar" de Google. */
+(() => {
+  const ag = document.querySelector('.agenda'), wa = document.querySelector('.wa-float');
+  if (!ag || !wa || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([e]) => wa.classList.toggle('al-costado', e.isIntersecting), { threshold: 0.3 }).observe(ag);
+})();
+</script>
+<script>
+/* Demo: los botones de contacto muestran un aviso en vez de llevar a datos que pueden ser de alguien real. */
+(() => {
+  const toast = document.getElementById('demo-toast');
+  let t;
+  const show = que => {
+    toast.textContent = 'Es una demo: en la web real, este botón abre ' + que + '.';
+    toast.style.opacity = '1';
+    clearTimeout(t);
+    t = setTimeout(() => (toast.style.opacity = '0'), 2600);
+  };
+  document.addEventListener('click', e => {
+    const a = e.target.closest('[data-demo]');
+    if (a) { e.preventDefault(); e.stopImmediatePropagation(); show(a.dataset.demo); }
+  }, true);
+  document.addEventListener('submit', e => {
+    e.preventDefault(); e.stopImmediatePropagation(); show('WhatsApp con el mensaje armado');
+  }, true);
+})();
+</script>
+</body>
+</html>
