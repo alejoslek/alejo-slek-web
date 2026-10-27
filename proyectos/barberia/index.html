@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Filo Barbería · Rosario, Av. Ejemplo 1234</title>
+<meta name="description" content="Barbería en Rosario. Corte, barba y corte + barba. De martes a sábado de 10 a 20 h, en Av. Ejemplo 1234. Sacá tu turno por WhatsApp.">
+<meta name="theme-color" content="#130f06">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Filo Barbería · Rosario">
+<meta property="og:description" content="Corte, barba y corte + barba. Turnos por WhatsApp.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Identidad · Filo Barbería
+   Personalidad: con carácter, de oficio, directa · hombres jóvenes y adultos de Rosario, desde el celular
+   Marca: mostaza #c99a2e sobre negro cálido (el negro con dorado de barbería, con un mostaza propio) · base oscura fija
+   Letra: Anton (títulos, condensada) + Barlow (texto)
+   Firma: el "filo": cortes en diagonal entre secciones y una línea fina mostaza
+   Tono: de vos, directo · Movimiento: medio (portada que hace zoom, cierre con círculo) */
+:root{
+  --bg:#130f06;
+  --surface:#1e190d;
+  --fg:#e3ddd3;
+  --muted:#8f8571;
+  --line:#362f22;
+  --accent:#c99a2e;
+  --accent-fg:#111114;
+  --accent-text:#c99a2e;
+  --ink:#140c00;
+  --ink-fg:#f7f1e6;
+  --ink-muted:#897f6b;
+  --brand-100:#ffe5b1;
+  --brand-800:#533b00;
+  color-scheme:dark;
+}
+:root{
+  --font:"Barlow",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --font-display:"Anton",Impact,"Arial Narrow",sans-serif;
+  --gutter:clamp(16px,4vw,40px);
+  --wrap:1120px;
+  --wa:#25d366;
+  --cut:clamp(28px,5vw,64px);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip;padding-bottom:84px}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+img,svg{display:block}
+a{color:var(--accent-text)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* Motor de desplazamiento · núcleo. Los estilos de cada efecto se suman aparte (references/efectos.md). */
+.fx-pin{--p:0;--pe:0;position:relative;height:var(--len,250vh)}
+.fx-stick{position:sticky;top:var(--fx-top,0px);height:calc(100vh - var(--fx-top,0px));height:calc(100svh - var(--fx-top,0px));overflow:hidden}
+.fx-track{display:flex;width:max-content;transform:translateX(var(--x,0px));will-change:transform}
+.fx-stack>*{position:sticky;top:calc(var(--fx-stack-top,14vh) + var(--i,0) * 22px);transform-origin:50% 0;transform:scale(calc(1 - var(--c,0) * .08));filter:brightness(calc(1 - var(--c,0) * .4))}
+.fx-ready .fx-in{opacity:0;transform:translateY(40px);transition:opacity .9s ease var(--d,0s),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.fx-ready .fx-in.is-in{opacity:1;transform:none}
+[data-words] .w{opacity:clamp(.14,calc((var(--p,1) * 1.25 * var(--n) - var(--i)) / 3),1)}
+canvas[data-frames]{display:block;width:100%;height:100%}
+@media (prefers-reduced-motion:reduce){
+  .fx-pin{height:auto!important}
+  .fx-stick{position:relative;top:auto;height:auto;min-height:100svh}
+  .fx-track{transform:none;width:auto;overflow-x:auto}
+  .fx-stack>*{position:relative;top:auto}
+  .fx-ready .fx-in{opacity:1;transform:none;transition:none}
+}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;font:700 17px/1 var(--font);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;border:0;cursor:pointer;clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%)}
+.btn svg{width:22px;height:22px}
+.btn-wa{background:var(--wa);color:#06301a}
+.btn-main{background:var(--accent);color:var(--accent-fg)}
+
+/* Encabezado */
+.top{position:fixed;inset:0 0 auto;z-index:50;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);background:color-mix(in srgb,var(--bg) 70%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.top b{font:400 26px/1 var(--font-display);letter-spacing:.04em;text-transform:uppercase}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+
+/* 1 · Portada que hace zoom */
+.hero .fx-stick{display:grid;place-items:center;background:var(--ink)}
+.hero .fx-stick>*{grid-area:1/1}
+.hero-title{font:400 clamp(150px,34vw,460px)/.82 var(--font-display);text-transform:uppercase;letter-spacing:.01em;color:var(--ink-fg);
+  transform:translateY(calc(var(--pe) * -24vh)) scale(calc(1 - var(--pe) * .55));opacity:calc(1 - var(--pe) * .8)}
+.hero-title span{color:var(--accent)}
+.hero-obj{--t:clamp(0,calc((var(--p) - .15) / .85),1);width:min(520px,86vw);transform:translateY(calc((1 - var(--t)) * 70vh + 6vh)) rotate(calc(-18deg + var(--t) * 12deg))}
+.hero-sub{align-self:end;margin-bottom:12vh;text-align:center;padding:0 var(--gutter);font:600 clamp(18px,2.2vw,24px)/1.3 var(--font);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-fg);opacity:clamp(0,calc((var(--p) - .75) * 6),1)}
+.hero-sub em{font-style:normal;color:var(--accent)}
+.hero-hint{align-self:end;margin-bottom:8vh;font-size:15px;color:var(--ink-muted);opacity:clamp(0,calc(1 - var(--p) * 6),1)}
+
+/* Secciones con corte en diagonal (la firma) */
+.sec{position:relative;padding:calc(var(--cut) + 56px) 0 calc(var(--cut) + 64px)}
+.sec.alt{background:var(--surface);clip-path:polygon(0 var(--cut),100% 0,100% calc(100% - var(--cut)),0 100%);margin:calc(var(--cut) * -1) 0}
+.sec h2{font:400 clamp(48px,8vw,104px)/.9 var(--font-display);text-transform:uppercase;letter-spacing:.01em}
+.edge{display:block;width:120px;height:4px;margin:20px 0 28px;background:var(--accent);transform:skewX(-30deg)}
+.sec .intro{color:var(--muted);max-width:46ch}
+
+/* Servicios y precios */
+.prices{margin-top:36px;max-width:760px}
+.prices li{display:flex;align-items:baseline;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.prices h3{font:700 clamp(22px,3vw,30px)/1.1 var(--font);text-transform:uppercase;letter-spacing:.03em}
+.prices .dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-6px)}
+.prices b{font:400 clamp(32px,4.4vw,48px)/1 var(--font-display);color:var(--accent);font-variant-numeric:tabular-nums}
+.prices + .cta{margin-top:34px}
+
+/* Instagram */
+.ig{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+.ig p{color:var(--muted);margin-top:10px}
+.ig a.handle{font:400 clamp(34px,6vw,72px)/1 var(--font-display);color:var(--fg);text-decoration:none;text-transform:lowercase;letter-spacing:.01em}
+.ig a.handle:hover{color:var(--accent)}
+@media (max-width:760px){.ig{grid-template-columns:1fr}}
+
+/* Equipo */
+.crew{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:760px}
+.crew li{display:flex;align-items:center;gap:18px;padding:22px;background:var(--bg);clip-path:polygon(0 0,100% 0,calc(100% - 18px) 100%,0 100%)}
+.crew .mono{flex:none;display:grid;place-items:center;width:72px;height:72px;font:400 34px/1 var(--font-display);color:var(--accent-fg);background:var(--accent)}
+.crew h3{font:400 34px/1 var(--font-display);text-transform:uppercase}
+.crew p{color:var(--muted)}
+@media (max-width:560px){.crew{grid-template-columns:1fr}}
+
+/* Dónde y cuándo */
+.visit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,4vw,48px);margin-top:36px}
+.visit dt{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.visit dd{margin:6px 0 24px;font:400 clamp(30px,4vw,44px)/1.05 var(--font-display);text-transform:uppercase}
+.visit .cta{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:760px){.visit{grid-template-columns:1fr}}
+
+/* 8 · Cierre con círculo */
+.finale .fx-stick{display:grid;place-items:center;background:var(--ink)}
+.fin-under{font:400 clamp(44px,8vw,96px)/1 var(--font-display);color:var(--ink-muted);text-transform:uppercase}
+.fin-over{--t:clamp(0,calc(var(--p) / .8),1);position:absolute;inset:0;display:grid;place-content:center;justify-items:center;text-align:center;gap:18px;padding:0 var(--gutter);
+  background:radial-gradient(70% 60% at 30% 30%,#e3b84c,transparent 70%),#c99a2e;color:#140c00;clip-path:circle(calc(var(--t) * 72%) at 50% 55%)}
+.fin-over h2{font:400 clamp(72px,15vw,200px)/.85 var(--font-display);text-transform:uppercase;transform:scale(calc(.8 + var(--t) * .2))}
+.fin-over p{font:600 20px/1.3 var(--font);letter-spacing:.04em;text-transform:uppercase}
+.fin-over .btn{background:#140c00;color:#f7f1e6}
+
+.foot{padding:40px 0 56px;color:var(--muted);font-size:16px}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+.wa-float{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:60;display:flex;align-items:center;gap:8px;min-height:56px;padding:0 20px 0 16px;border-radius:999px;background:var(--wa);color:#06301a;font:700 17px/1 var(--font);text-decoration:none;box-shadow:0 12px 30px -10px rgba(0,0,0,.6)}
+.wa-float svg{width:26px;height:26px}
+@media (max-width:600px){.wa-float{padding:0 15px}.wa-float span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+</style>
+</head>
+<body>
+<div id="demo-aviso" role="note" style="all:initial;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:center;padding:10px 16px;background:#141414;color:#fff;font:500 14px/1.4 -apple-system,'Segoe UI',Roboto,sans-serif;text-align:center;position:relative;z-index:2147483000">
+  <span>Proyecto de práctica de Alejo Slek: el negocio y sus datos son ficticios.</span>
+  <a href="../../" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px">← Volver</a>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-3.7A8.5 8.5 0 1 1 20 11.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="top"><b>Filo</b><a href="#demo" data-demo="la llamada">341 000-0000</a></header>
+
+<main>
+  <!-- 1 · Portada que hace zoom -->
+  <section class="fx-pin hero" style="--len:240vh" data-rest="1" aria-labelledby="titulo">
+    <div class="fx-stick">
+      <h1 class="hero-title" id="titulo">Fil<span>o</span></h1>
+      <svg class="hero-obj" viewBox="0 0 520 180" role="img" aria-label="Una navaja de barbero">
+        <defs>
+          <linearGradient id="blade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f1ea"/><stop offset=".55" stop-color="#b9b4aa"/><stop offset="1" stop-color="#7c776d"/></linearGradient>
+          <linearGradient id="handle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2a14"/><stop offset="1" stop-color="#1a1208"/></linearGradient>
+        </defs>
+        <path d="M250 70h230c18 0 30 14 30 30v2c0 12-10 22-22 22H262z" fill="url(#blade)"/>
+        <path d="M262 124h226" stroke="#ffffff" stroke-width="3" opacity=".7"/>
+        <rect x="20" y="60" width="250" height="56" rx="28" fill="url(#handle)"/>
+        <rect x="34" y="72" width="220" height="6" rx="3" fill="#c99a2e" opacity=".85"/>
+        <circle cx="252" cy="88" r="12" fill="#c99a2e"/>
+      </svg>
+      <p class="hero-hint">Bajá ↓</p>
+      <p class="hero-sub">Barbería en Rosario · <em>Av. Ejemplo 1234</em></p>
+    </div>
+  </section>
+
+  <section class="sec" id="servicios" aria-labelledby="t-serv">
+    <div class="wrap">
+      <h2 id="t-serv" class="fx-in">Lo que hacemos</h2>
+      <span class="edge fx-in" style="--d:.06s"></span>
+      <ul class="prices">
+        <li class="fx-in"><h3>Corte</h3><span class="dots"></span><b>$9.000</b></li>
+        <li class="fx-in" style="--d:.08s"><h3>Barba</h3><span class="dots"></span><b>$6.000</b></li>
+        <li class="fx-in" style="--d:.16s"><h3>Corte + barba</h3><span class="dots"></span><b>$13.000</b></li>
+      </ul>
+      <div class="cta fx-in">
+        <a class="btn btn-wa" href="#demo" data-demo="WhatsApp" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Sacá tu turno</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt" aria-labelledby="t-ig">
+    <div class="wrap ig">
+      <div>
+        <h2 id="t-ig" class="fx-in">Los cortes,<br>en Instagram</h2>
+        <span class="edge fx-in" style="--d:.06s"></span>
+        <p class="fx-in" style="--d:.1s">Ahí subimos los trabajos de cada semana.</p>
+      </div>
+      <a class="handle fx-in" style="--d:.14s" href="#demo" data-demo="Instagram" target="_blank" rel="noopener">@cuenta.de.ejemplo</a>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="t-crew">
+    <div class="wrap">
+      <h2 id="t-crew" class="fx-in">Los que cortan</h2>
+      <span class="edge fx-in" style="--d:.06s"></span>
+      <ul class="crew">
+        <li class="fx-in"><span class="mono" aria-hidden="true">N</span><div><h3>Nico</h3><p>Barbero</p></div></li>
+        <li class="fx-in" style="--d:.08s"><span class="mono" aria-hidden="true">T</span><div><h3>Tomi</h3><p>Barbero</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec alt" id="visitanos" aria-labelledby="t-visit">
+    <div class="wrap">
+      <h2 id="t-visit" class="fx-in">Dónde y cuándo</h2>
+      <span class="edge fx-in" style="--d:.06s"></span>
+      <div class="visit">
+        <dl class="fx-in">
+          <dt>Dirección</dt><dd>Av. Ejemplo 1234, Rosario</dd>
+          <dt>Horarios</dt><dd>Martes a sábado<br>10 a 20 h</dd>
+        </dl>
+        <div class="cta fx-in" style="--d:.1s">
+          <a class="btn btn-wa" href="#demo" data-demo="WhatsApp" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Turnos por WhatsApp</a>
+          <a class="btn btn-main" href="#demo" data-demo="Google Maps" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · Cierre con círculo -->
+  <section class="fx-pin finale" style="--len:200vh">
+    <div class="fx-stick">
+      <p class="fin-under">¿Te toca?</p>
+      <div class="fin-over">
+        <h2>Filo</h2>
+        <p>Martes a sábado · 10 a 20 h</p>
+        <a class="btn" href="#demo" data-demo="WhatsApp" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Sacá tu turno</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot"><div class="wrap"><p>Filo Barbería, Av. Ejemplo 1234, Rosario.</p><p>© 2026</p></div></footer>
+
+<a class="wa-float" href="#demo" data-demo="WhatsApp" target="_blank" rel="noopener" aria-label="Sacá tu turno por WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>Turnos</span></a>
+
+<script>
+/* Motor de desplazamiento · sin librerías.
+   Lee clases y atributos data-* de la página; las animaciones las hace el CSS con
+   la variable --p (de 0 a 1), que este motor actualiza mientras se baja.
+   Uso normal: scripts/incrustar.py lo pega al final del <body>.
+   En React/Vue/Next: cargarlo con <script src="motor.js" data-manual> y llamar
+   window.Desplazamiento.init() al montar la página; init() devuelve la función para desmontar. */
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const smooth = t => t * t * (3 - 2 * t);
+  const decimals = s => ((s || '').split('.')[1] || '').length;
+
+  function init(root = document) {
+    const $$ = s => [...root.querySelectorAll(s)];
+    const lang = document.documentElement.lang || 'es';
+    const pins = $$('.fx-pin');
+    const tracks = pins.filter(s => s.querySelector('.fx-track'));
+    const views = $$('.fx-view');
+    const stacks = $$('.fx-stack');
+    document.documentElement.classList.add('fx-ready');
+
+    // Texto que se enciende: cada palabra en un <span class="w"> con su índice.
+    $$('[data-words]').forEach(el => {
+      if (el.querySelector('.w')) return;
+      const ws = el.textContent.trim().split(/\s+/);
+      el.textContent = '';
+      ws.forEach((w, i) => {
+        const s = document.createElement('span');
+        s.className = 'w';
+        s.style.setProperty('--i', i);
+        s.textContent = w;
+        el.append(s, ' ');
+      });
+      el.style.setProperty('--n', ws.length);
+    });
+
+    stacks.forEach(list => [...list.children].forEach((c, i) => c.style.setProperty('--i', i)));
+
+    // Secuencia de fotos en un <canvas data-frames>.
+    const seqs = $$('canvas[data-frames]').map(cv => {
+      const n = +cv.dataset.frames, pad = +(cv.dataset.pad || 0), start = +(cv.dataset.start || 0);
+      const s = { cv, n, sec: cv.closest('.fx-pin'), a: +(cv.dataset.a || 0), b: +(cv.dataset.b || 1), cover: cv.dataset.fit === 'cover', last: -1 };
+      s.imgs = Array.from({ length: n }, (_, i) => {
+        const im = new Image();
+        im.onload = () => { s.last = -1; draw(s); };
+        im.src = cv.dataset.src.replace('{i}', String(i + start).padStart(pad, '0'));
+        return im;
+      });
+      return s;
+    });
+
+    function draw(s) {
+      const cv = s.cv, dpr = Math.min(2, devicePixelRatio || 1);
+      const W = Math.round(cv.clientWidth * dpr), H = Math.round(cv.clientHeight * dpr);
+      if (!W || !H) return;
+      if (cv.width !== W || cv.height !== H) { cv.width = W; cv.height = H; s.last = -1; }
+      const p = s.sec ? s.sec._p || 0 : 0;
+      const want = Math.round(clamp((p - s.a) / Math.max(1e-6, s.b - s.a), 0, 1) * (s.n - 1));
+      let i = -1;
+      for (let d = 0; d < s.n && i < 0; d++) {
+        if (want - d >= 0 && s.imgs[want - d].naturalWidth) i = want - d;
+        else if (want + d < s.n && s.imgs[want + d].naturalWidth) i = want + d;
+      }
+      if (i < 0 || i === s.last) return;
+      s.last = i;
+      const im = s.imgs[i], ctx = cv.getContext('2d');
+      const r = (s.cover ? Math.max : Math.min)(W / im.naturalWidth, H / im.naturalHeight);
+      const w = im.naturalWidth * r, h = im.naturalHeight * r;
+      ctx.clearRect(0, 0, W, H);
+      ctx.drawImage(im, (W - w) / 2, (H - h) / 2, w, h);
+    }
+
+    // Galería de costado: la sección mide lo que tiene que correr la pista.
+    function size() {
+      tracks.forEach(sec => {
+        const tr = sec.querySelector('.fx-track'), st = sec.querySelector('.fx-stick') || sec;
+        sec._dist = reduce ? 0 : Math.max(0, Math.max(tr.offsetWidth, tr.scrollWidth) - st.clientWidth);
+        if (!reduce) sec.style.height = `calc(100svh + ${sec._dist}px)`;
+        sec._p = undefined;
+      });
+    }
+
+    function update() {
+      const vh = innerHeight;
+      pins.forEach(sec => {
+        const r = sec.getBoundingClientRect();
+        const p = reduce ? +(sec.dataset.rest || 1) : clamp(-r.top / Math.max(1, r.height - vh), 0, 1);
+        if (sec._p === p) return;
+        sec._p = p;
+        sec.style.setProperty('--p', p.toFixed(4));
+        sec.style.setProperty('--pe', smooth(p).toFixed(4));
+        if (sec._dist) sec.style.setProperty('--x', `${(-p * sec._dist).toFixed(1)}px`);
+      });
+      views.forEach(el => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--v', (reduce ? 0.5 : clamp((vh - r.top) / (vh + r.height), 0, 1)).toFixed(4));
+      });
+      stacks.forEach(list => {
+        const cards = [...list.children];
+        cards.forEach((c, i) => {
+          const next = cards[i + 1];
+          let v = 0;
+          if (next && !reduce) {
+            const top = c.getBoundingClientRect().top, h = c.offsetHeight;
+            v = clamp((top + h - next.getBoundingClientRect().top) / Math.max(1, h - 22), 0, 1);
+          }
+          c.style.setProperty('--c', v.toFixed(3));
+        });
+      });
+      seqs.forEach(draw);
+    }
+
+    // Aparición al entrar y números que cuentan.
+    const fmt = (v, d) => v.toLocaleString(lang, { minimumFractionDigits: d, maximumFractionDigits: d });
+    function count(el) {
+      const to = parseFloat(el.dataset.count), d = decimals(el.dataset.count);
+      if (reduce) { el.textContent = fmt(to, d); return; }
+      const t0 = performance.now(), D = +(el.dataset.ms || 1400);
+      const f = now => {
+        const t = clamp((now - t0) / D, 0, 1);
+        el.textContent = fmt(to * (1 - Math.pow(1 - t, 3)), d);
+        if (t < 1) requestAnimationFrame(f);
+      };
+      requestAnimationFrame(f);
+    }
+    if (!reduce) $$('[data-count]').forEach(el => (el.textContent = fmt(0, decimals(el.dataset.count))));
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      el.classList.add('is-in');
+      (el.matches('[data-count]') ? [el] : [...el.querySelectorAll('[data-count]')]).forEach(count);
+      io.unobserve(el);
+    }), { rootMargin: '0px 0px -12% 0px' });
+    $$('.fx-in, [data-count]').filter(el => el.matches('.fx-in') || !el.closest('.fx-in')).forEach(el => io.observe(el));
+
+    let queued = false;
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => { queued = false; update(); });
+    };
+    const onResize = () => { size(); seqs.forEach(s => (s.last = -1)); onScroll(); };
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    addEventListener('resize', onResize);
+    const ro = new ResizeObserver(onResize);
+    tracks.forEach(sec => ro.observe(sec.querySelector('.fx-track')));
+    if (document.fonts) document.fonts.ready.then(onResize);
+    size();
+    update();
+    return () => {
+      document.removeEventListener('scroll', onScroll, { capture: true });
+      removeEventListener('resize', onResize);
+      ro.disconnect();
+      io.disconnect();
+    };
+  }
+
+  window.Desplazamiento = { init };
+  const me = document.currentScript;
+  if (!(me && me.hasAttribute('data-manual'))) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => init(), { once: true });
+    else init();
+  }
+})();
+</script>
+
+<div id="demo-toast" role="status" aria-live="polite" style="all:initial;position:fixed;left:50%;bottom:24px;transform:translateX(-50%);max-width:min(92vw,420px);padding:12px 16px;border-radius:12px;background:#141414;color:#fff;font:500 15px/1.4 -apple-system,'Segoe UI',Roboto,sans-serif;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .25s;z-index:2147483001"></div>
+<script>
+/* Demo: los botones de contacto muestran un aviso en vez de llevar a datos que pueden ser de alguien real. */
+(() => {
+  const toast = document.getElementById('demo-toast');
+  let t;
+  const show = que => {
+    toast.textContent = 'Es una demo: en la web real, este botón abre ' + que + '.';
+    toast.style.opacity = '1';
+    clearTimeout(t);
+    t = setTimeout(() => (toast.style.opacity = '0'), 2600);
+  };
+  document.addEventListener('click', e => {
+    const a = e.target.closest('[data-demo]');
+    if (a) { e.preventDefault(); e.stopImmediatePropagation(); show(a.dataset.demo); }
+  }, true);
+  document.addEventListener('submit', e => {
+    e.preventDefault(); e.stopImmediatePropagation(); show('WhatsApp con el mensaje armado');
+  }, true);
+})();
+</script>
+</body>
+</html>
