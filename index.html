@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Páginas web y sistemas para negocios en Córdoba · Alejo Slek</title>
+<meta name="description" content="Páginas web y sistemas a medida para pymes y emprendimientos de Córdoba: que te encuentren en Google y que el día a día marche. Escribime.">
+<!-- Verificación de Google Search Console: no borrar nunca (Google revisa cada tanto que siga acá). -->
+<meta name="google-site-verification" content="PDmkGjDhDasfPE7oEAnSY3WnouzjsMTRxsxNFnxuexg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Alejo Slek">
+<meta property="og:title" content="Alejo Slek · Webs y sistemas para empresas">
+<meta property="og:description" content="Tu negocio, más fácil de encontrar y de manejar. En Córdoba y a distancia.">
+<meta property="og:url" content="https://alejo-slek.netlify.app/">
+<meta property="og:image" content="https://alejo-slek.netlify.app/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alejo Slek: tu negocio, más fácil de encontrar y de manejar.">
+<link rel="canonical" href="https://alejo-slek.netlify.app/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://alejo-slek.netlify.app/#web",
+      "name": "Alejo Slek",
+      "url": "https://alejo-slek.netlify.app/",
+      "inLanguage": "es-AR",
+      "publisher": {"@id": "https://alejo-slek.netlify.app/#persona"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://alejo-slek.netlify.app/#persona",
+      "name": "Alejo Slek",
+      "url": "https://alejo-slek.netlify.app/",
+      "jobTitle": "Páginas web y sistemas para negocios",
+      "description": "Webs, análisis de procesos y sistemas internos para pymes y emprendimientos.",
+      "knowsAbout": ["Páginas web", "Análisis de procesos", "Sistemas internos a medida"],
+      "address": {"@type": "PostalAddress", "addressLocality": "Córdoba", "addressRegion": "Córdoba", "addressCountry": "AR"},
+      "sameAs": ["https://www.instagram.com/alejoslek/"]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+/* Identidad · Alejo Slek
+   Personalidad: prolija, segura, con carácter · dueños de pymes y emprendimientos de Córdoba que llegan por un QR, desde el celular
+   Marca: bermellón #e5482d con negro #141414 y blanco (estilo suizo) · base clara fija
+   Letra: Archivo (una sola familia: 900 para el nombre, 800 para títulos, 400 para texto)
+   Firma: los cuadritos (la grilla de bloques de la portada, que se repite en los proyectos y en "cómo trabajo")
+   Tono: de vos, directo, sin tecnicismos · Movimiento: medio (aparición, tarjetas que se apilan, cierre con círculo) */
+:root{
+  --bg:#ffffff; --surface:#f3f1ef; --fg:#141414; --muted:#5f5a57; --line:#e2deda;
+  --accent:#e5482d; --accent-fg:#141414; --accent-text:#c8341a;
+  --ink:#141414; --ink-fg:#ffffff; --ink-muted:#a39d99;
+  --font:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --font-display:var(--font);
+  --gutter:clamp(18px,4vw,48px);
+  --wrap:1200px;
+  color-scheme:light;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--fg);font:400 18px/1.55 var(--font);-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3,p,figure{margin:0}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.on-ink{background:var(--ink);color:var(--ink-fg)}
+
+/* Motor de desplazamiento · núcleo. Los estilos de cada efecto se suman aparte (references/efectos.md). */
+.fx-pin{--p:0;--pe:0;position:relative;height:var(--len,250vh)}
+.fx-stick{position:sticky;top:var(--fx-top,0px);height:calc(100vh - var(--fx-top,0px));height:calc(100svh - var(--fx-top,0px));overflow:hidden}
+.fx-track{display:flex;width:max-content;transform:translateX(var(--x,0px));will-change:transform}
+.fx-stack>*{position:sticky;top:calc(var(--fx-stack-top,14vh) + var(--i,0) * 22px);transform-origin:50% 0;transform:scale(calc(1 - var(--c,0) * .08));filter:brightness(calc(1 - var(--c,0) * .4))}
+.fx-ready .fx-in{opacity:0;transform:translateY(40px);transition:opacity .9s ease var(--d,0s),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.fx-ready .fx-in.is-in{opacity:1;transform:none}
+[data-words] .w{opacity:clamp(.14,calc((var(--p,1) * 1.25 * var(--n) - var(--i)) / 3),1)}
+canvas[data-frames]{display:block;width:100%;height:100%}
+@media (prefers-reduced-motion:reduce){
+  .fx-pin{height:auto!important}
+  .fx-stick{position:relative;top:auto;height:auto;min-height:100svh}
+  .fx-track{transform:none;width:auto;overflow-x:auto}
+  .fx-stack>*{position:relative;top:auto}
+  .fx-ready .fx-in{opacity:1;transform:none;transition:none}
+}
+
+/* ── Encabezado ── */
+.top{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;text-decoration:none}
+.brand svg{width:34px;height:34px;flex:none}
+.top nav{display:flex;gap:22px;font-weight:600;font-size:16px}
+.top nav a{text-decoration:none}
+.top nav a:hover,.top nav a.cta{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+@media (max-width:640px){.top nav a:not(.cta){display:none}}
+
+/* ── Portada ── */
+.name{font-weight:900;font-size:clamp(76px,21vw,280px);line-height:.82;letter-spacing:-.065em;padding-top:2vh;margin-left:-.04em}
+.blocks{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:clamp(20px,4vw,40px)}
+.blocks i{aspect-ratio:1;background:var(--surface)}
+.blocks i.r{background:var(--accent)}
+.blocks i.k{background:var(--fg)}
+.blocks i.o{background:transparent;box-shadow:inset 0 0 0 2px var(--fg)}
+@media (min-width:900px){.blocks{grid-template-columns:repeat(12,1fr);gap:8px}.name{font-size:min(15vw,230px)}}
+.hero{display:grid;gap:22px;padding-top:clamp(26px,5vw,56px);padding-bottom:clamp(64px,12vh,120px)}
+.hero h1{font-weight:800;font-size:clamp(32px,6vw,72px);line-height:1.04;letter-spacing:-.04em;max-width:15ch}
+.hero h1 .kicker{display:block;font-size:clamp(15px,1.5vw,18px);font-weight:800;letter-spacing:0;line-height:1.3;margin-bottom:.8em;color:var(--accent-text)}
+.hero h1 em{font-style:normal;background:var(--accent);padding:0 .1em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lead{color:var(--muted);font-size:clamp(18px,1.6vw,21px);max-width:44ch}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;font-weight:800;font-size:17px;text-decoration:none;background:var(--fg);color:#fff;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.line{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 2px var(--fg)}
+@media (min-width:900px){.hero{grid-template-columns:1.25fr 1fr;align-items:end;column-gap:48px}.hero h1{grid-row:span 2}}
+
+/* ── Secciones ── */
+.sec{padding-top:clamp(56px,10vh,110px);padding-bottom:clamp(56px,10vh,110px)}
+.sec-head{display:grid;gap:10px;border-top:2px solid var(--fg);padding-top:18px;margin-bottom:clamp(28px,5vh,52px)}
+.sec-head h2{font-weight:800;font-size:clamp(34px,5vw,64px);line-height:1.02;letter-spacing:-.035em}
+.sec-head p{color:var(--muted);max-width:52ch}
+@media (min-width:900px){.sec-head{grid-template-columns:1fr 1fr;align-items:end}}
+
+/* ── Lo que hago: tarjetas que se apilan ── */
+.fx-stack{--fx-stack-top:12vh;padding-bottom:4vh}
+.s-card{min-height:min(58vh,440px);margin-bottom:9vh;padding:clamp(24px,4.5vw,52px);display:flex;flex-direction:column;gap:12px;background:var(--surface);color:var(--fg)}
+.s-card:last-child{margin-bottom:0}
+.s-card .n{order:3;margin-top:auto;align-self:flex-end;font-weight:900;font-size:clamp(72px,12vw,160px);line-height:.8;letter-spacing:-.06em}
+.s-card h3{font-weight:800;font-size:clamp(28px,4vw,52px);line-height:1.02;letter-spacing:-.03em;max-width:16ch}
+.s-card p{font-size:clamp(17px,1.6vw,20px);max-width:42ch;line-height:1.45}
+.s-card.r{background:var(--accent)}
+.s-card.k{background:var(--fg);color:#fff}
+.s-card.o{background:var(--bg);box-shadow:inset 0 0 0 2px var(--fg)}
+.tag{align-self:flex-start;font-weight:800;font-size:14px;padding:4px 10px;background:var(--fg);color:#fff}
+
+/* ── Trabajos: los cuadritos ── */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tile{display:flex;flex-direction:column;text-decoration:none;background:var(--surface)}
+.tile img{aspect-ratio:4/5;object-fit:cover;object-position:top;width:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.tile figure{overflow:hidden}
+.tile:hover img{transform:scale(1.04)}
+.tile .cap{padding:12px 14px 16px;display:grid;gap:2px}
+.tile b{font-weight:800;font-size:19px;letter-spacing:-.01em}
+.tile span{font-size:15px;color:var(--muted)}
+.tile.next{min-height:120px;justify-content:space-between;padding:18px;background:var(--accent);color:var(--accent-fg)}
+.tile.next:nth-child(odd){grid-column:1/-1} /* si arranca una fila, la ocupa entera; si no, completa el hueco */
+.tile.next b{font-size:clamp(22px,3vw,34px);letter-spacing:-.03em;line-height:1.05}
+.tile.next span{color:var(--accent-fg);font-weight:600}
+@media (min-width:900px){.tiles{grid-template-columns:repeat(3,1fr)}.tile.next:nth-child(n){grid-column:auto}.tile.next:nth-child(3n+1){grid-column:1/-1}}
+
+/* ── Cómo trabajo ── */
+.ways{display:grid;gap:28px}
+.way i{display:block;width:28px;height:28px;margin-bottom:16px}
+.way i.r{background:var(--accent)} .way i.k{background:var(--fg)} .way i.o{box-shadow:inset 0 0 0 2px var(--fg)}
+.way h3{font-weight:800;font-size:24px;letter-spacing:-.02em;margin-bottom:6px}
+.way p{color:var(--muted)}
+@media (min-width:900px){.ways{grid-template-columns:repeat(3,1fr);gap:40px}}
+
+/* ── Sobre mí ── */
+.about{display:grid;gap:24px}
+.about .big{font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1.12;letter-spacing:-.03em;max-width:24ch}
+.about .big em{font-style:normal;color:var(--accent-text)}
+.about p.more{color:var(--muted);max-width:52ch}
+@media (min-width:900px){.about{grid-template-columns:1.3fr 1fr;align-items:end}}
+
+/* ── Contacto: cierre con círculo ── */
+.finale .fx-stick{display:grid;place-items:center}
+.fin-under{font-weight:900;font-size:clamp(48px,11vw,150px);letter-spacing:-.06em;color:#fff}
+.fin-over{--t:clamp(0,calc(var(--p) / .7),1);position:absolute;inset:0;display:grid;place-content:center;justify-items:start;gap:16px;padding:0 var(--gutter);
+  background:var(--accent);color:var(--fg);clip-path:circle(calc(var(--t) * 80%) at 50% 50%)}
+.fin-over h2{font-weight:900;font-size:clamp(56px,12vw,170px);line-height:.86;letter-spacing:-.06em;transform:translateY(calc((1 - var(--t)) * 30px))}
+.fin-over p{font-size:clamp(18px,1.8vw,22px);max-width:34ch;font-weight:600}
+.fin-over .btns{margin-top:8px}
+.fin-over small{font-size:15px;max-width:44ch;margin-top:10px}
+.anchor{position:absolute;left:0;top:calc(100% - 100vh);top:calc(100% - 100svh)}
+
+.foot{padding-top:28px;padding-bottom:28px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:15px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <a class="brand" href="#inicio" aria-label="Alejo Slek, inicio"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#e5482d"/><text x="20" y="27.5" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="18" fill="#141414" letter-spacing="-1">AS</text></svg>Sistemas y webs</a>
+  <nav aria-label="Secciones"><a href="#hago">Lo que hago</a><a href="#trabajos">Trabajos</a><a class="cta" href="#contacto">Contacto</a></nav>
+</header>
+
+<main id="inicio">
+  <!-- Portada -->
+  <section class="wrap" aria-labelledby="titulo">
+    <p class="name" aria-hidden="true">Alejo<br>Slek</p>
+    <div class="blocks" aria-hidden="true">
+      <i class="r fx-in"></i><i class="fx-in" style="--d:.04s"></i><i class="k fx-in" style="--d:.08s"></i><i class="fx-in" style="--d:.12s"></i><i class="o fx-in" style="--d:.16s"></i><i class="fx-in" style="--d:.2s"></i><i class="fx-in" style="--d:.24s"></i><i class="o fx-in" style="--d:.28s"></i><i class="fx-in" style="--d:.32s"></i><i class="r fx-in" style="--d:.36s"></i><i class="fx-in" style="--d:.4s"></i><i class="k fx-in" style="--d:.44s"></i>
+    </div>
+    <div class="hero">
+      <h1 id="titulo"><span class="kicker">Páginas web y sistemas en Córdoba</span>Tu negocio, <em>más fácil</em> de encontrar y de manejar.</h1>
+      <p class="lead">Soy Alejo Slek y me ocupo del sistema de información de tu negocio: la página web donde te encuentran, los procesos de todos los días y las herramientas que los ordenan. En Córdoba y a distancia.</p>
+      <div class="btns"><a class="btn" href="#contacto">Escribime</a><a class="btn line" href="#trabajos">Ver trabajos</a></div>
+    </div>
+  </section>
+
+  <!-- Lo que hago -->
+  <section class="sec wrap" id="hago" aria-labelledby="t-hago">
+    <div class="sec-head fx-in"><h2 id="t-hago">Lo que hago</h2><p>Cuatro partes de un mismo trabajo: que tu empresa se vea bien afuera y funcione bien adentro.</p></div>
+    <div class="fx-stack">
+      <article class="s-card r"><span class="n" aria-hidden="true">01</span><h3>Que te encuentren</h3><p>Páginas web claras, rápidas y a tu gusto, con la identidad de tu negocio. Preparadas para aparecer en Google y conectadas con lo que necesites: WhatsApp, Maps, turnos o pagos.</p></article>
+      <article class="s-card k"><span class="n" aria-hidden="true">02</span><h3>Entender cómo trabajás</h3><p>Miro tus procesos de cerca: qué se repite, dónde se traba y qué se puede mejorar.</p></article>
+      <article class="s-card"><span class="n" aria-hidden="true">03</span><h3>Ordenar el día a día</h3><p>Sistemas internos a medida para que el trabajo salga más ágil y tengas la información a mano.</p></article>
+      <article class="s-card o"><span class="n" aria-hidden="true">04</span><span class="tag">Próximamente</span><h3>Automatizar lo repetitivo</h3><p>Asistentes con IA que responden en WhatsApp y tareas que se hacen solas, para que tu equipo se ocupe de lo importante.</p></article>
+    </div>
+  </section>
+
+  <!-- Trabajos -->
+  <section class="sec wrap" id="trabajos" aria-labelledby="t-trabajos">
+    <div class="sec-head fx-in"><h2 id="t-trabajos">Trabajos</h2><p>Proyectos de práctica, para que veas cómo trabajo. Tocá uno para verlo completo.</p></div>
+    <div class="tiles">
+      <a class="tile fx-in" href="proyectos/turnos/"><figure><img src="img/turnos.jpg" alt="Captura de la web de práctica de Veterinaria Mandarina, con la agenda de turnos online" width="800" height="1000" loading="lazy"></figure><div class="cap"><b>Veterinaria Mandarina</b><span>Veterinaria con turnos online. Proyecto de práctica.</span></div></a>
+      <a class="tile fx-in" style="--d:.1s" href="proyectos/enfermeria/"><figure><img src="img/enfermeria.jpg" alt="Captura de la web de práctica de Cuidar en Casa, enfermería a domicilio" width="800" height="1000" loading="lazy"></figure><div class="cap"><b>Cuidar en Casa</b><span>Enfermería a domicilio. Proyecto de práctica.</span></div></a>
+      <a class="tile fx-in" href="proyectos/barberia/"><figure><img src="img/barberia.jpg" alt="Captura de la web de práctica de Filo Barbería" width="800" height="1000" loading="lazy"></figure><div class="cap"><b>Filo Barbería</b><span>Barbería. Proyecto de práctica.</span></div></a>
+      <a class="tile next fx-in" style="--d:.1s" href="#contacto"><b>El próximo puede ser el tuyo.</b><span>Contame tu idea →</span></a>
+    </div>
+  </section>
+
+  <!-- Cómo trabajo -->
+  <section class="sec wrap" aria-labelledby="t-como">
+    <div class="sec-head fx-in"><h2 id="t-como">Cómo trabajo</h2></div>
+    <div class="ways">
+      <div class="way fx-in"><i class="r" aria-hidden="true"></i><h3>Primero escucho</h3><p>Antes de proponer nada, entiendo cómo trabaja tu empresa y qué necesitás de verdad.</p></div>
+      <div class="way fx-in" style="--d:.1s"><i class="k" aria-hidden="true"></i><h3>Cuido cada detalle</h3><p>Que funcione bien y que se vea bien. Las dos cosas, siempre.</p></div>
+      <div class="way fx-in" style="--d:.2s"><i class="o" aria-hidden="true"></i><h3>Seguimos en contacto</h3><p>Te muestro avances mientras trabajo y, después de entregar, seguimos mejorando juntos.</p></div>
+    </div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section class="sec wrap" aria-labelledby="t-sobre">
+    <div class="sec-head fx-in"><h2 id="t-sobre">Sobre mí</h2></div>
+    <div class="about">
+      <p class="big fx-in">Me gusta que las cosas salgan bien: que <em>funcionen</em> y que se <em>vean</em> bien.</p>
+      <p class="more fx-in" style="--d:.1s">Soy de Córdoba y estudio Ingeniería en Sistemas. Escucho lo que necesitás, cuido cada detalle y respondo rápido.</p>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="fx-pin finale on-ink" style="--len:230vh" aria-labelledby="t-contacto">
+    <span class="anchor" id="contacto"></span>
+    <div class="fx-stick">
+      <p class="fin-under" aria-hidden="true">¿Hablamos?</p>
+      <div class="fin-over">
+        <h2 id="t-contacto">Hablemos.</h2>
+        <p>Contame qué necesita tu empresa y te respondo rápido.</p>
+        <div class="btns">
+          <a class="btn" href="#contacto" data-mail="alejoslekt|gmail.com">Escribime un mail</a>
+          <a class="btn line" href="https://www.instagram.com/alejoslek/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <small>Córdoba, Argentina. Reuniones presenciales en Córdoba; a distancia, en cualquier lugar.</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot wrap"><span>© 2026 Alejo Slek</span><span>Córdoba, Argentina</span></footer>
+
+<script>
+/* El mail se arma recién en el navegador: así los robots que juntan direcciones para mandar spam no lo encuentran en el código. */
+document.querySelectorAll('[data-mail]').forEach(a => {
+  const [u, d] = a.dataset.mail.split('|');
+  a.href = 'mailto:' + u + '@' + d + '?subject=' + encodeURIComponent('Consulta desde tu web');
+});
+</script>
+<script>
+/* Motor de desplazamiento · sin librerías.
+   Lee clases y atributos data-* de la página; las animaciones las hace el CSS con
+   la variable --p (de 0 a 1), que este motor actualiza mientras se baja.
+   Uso normal: scripts/incrustar.py lo pega al final del <body>.
+   En React/Vue/Next: cargarlo con <script src="motor.js" data-manual> y llamar
+   window.Desplazamiento.init() al montar la página; init() devuelve la función para desmontar. */
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const smooth = t => t * t * (3 - 2 * t);
+  const decimals = s => ((s || '').split('.')[1] || '').length;
+
+  function init(root = document) {
+    const $$ = s => [...root.querySelectorAll(s)];
+    const lang = document.documentElement.lang || 'es';
+    const pins = $$('.fx-pin');
+    const tracks = pins.filter(s => s.querySelector('.fx-track'));
+    const views = $$('.fx-view');
+    const stacks = $$('.fx-stack');
+    document.documentElement.classList.add('fx-ready');
+
+    // Texto que se enciende: cada palabra en un <span class="w"> con su índice.
+    $$('[data-words]').forEach(el => {
+      if (el.querySelector('.w')) return;
+      const ws = el.textContent.trim().split(/\s+/);
+      el.textContent = '';
+      ws.forEach((w, i) => {
+        const s = document.createElement('span');
+        s.className = 'w';
+        s.style.setProperty('--i', i);
+        s.textContent = w;
+        el.append(s, ' ');
+      });
+      el.style.setProperty('--n', ws.length);
+    });
+
+    stacks.forEach(list => [...list.children].forEach((c, i) => c.style.setProperty('--i', i)));
+
+    // Secuencia de fotos en un <canvas data-frames>.
+    const seqs = $$('canvas[data-frames]').map(cv => {
+      const n = +cv.dataset.frames, pad = +(cv.dataset.pad || 0), start = +(cv.dataset.start || 0);
+      const s = { cv, n, sec: cv.closest('.fx-pin'), a: +(cv.dataset.a || 0), b: +(cv.dataset.b || 1), cover: cv.dataset.fit === 'cover', last: -1 };
+      s.imgs = Array.from({ length: n }, (_, i) => {
+        const im = new Image();
+        im.onload = () => { s.last = -1; draw(s); };
+        im.src = cv.dataset.src.replace('{i}', String(i + start).padStart(pad, '0'));
+        return im;
+      });
+      return s;
+    });
+
+    function draw(s) {
+      const cv = s.cv, dpr = Math.min(2, devicePixelRatio || 1);
+      const W = Math.round(cv.clientWidth * dpr), H = Math.round(cv.clientHeight * dpr);
+      if (!W || !H) return;
+      if (cv.width !== W || cv.height !== H) { cv.width = W; cv.height = H; s.last = -1; }
+      const p = s.sec ? s.sec._p || 0 : 0;
+      const want = Math.round(clamp((p - s.a) / Math.max(1e-6, s.b - s.a), 0, 1) * (s.n - 1));
+      let i = -1;
+      for (let d = 0; d < s.n && i < 0; d++) {
+        if (want - d >= 0 && s.imgs[want - d].naturalWidth) i = want - d;
+        else if (want + d < s.n && s.imgs[want + d].naturalWidth) i = want + d;
+      }
+      if (i < 0 || i === s.last) return;
+      s.last = i;
+      const im = s.imgs[i], ctx = cv.getContext('2d');
+      const r = (s.cover ? Math.max : Math.min)(W / im.naturalWidth, H / im.naturalHeight);
+      const w = im.naturalWidth * r, h = im.naturalHeight * r;
+      ctx.clearRect(0, 0, W, H);
+      ctx.drawImage(im, (W - w) / 2, (H - h) / 2, w, h);
+    }
+
+    // Galería de costado: la sección mide lo que tiene que correr la pista.
+    function size() {
+      tracks.forEach(sec => {
+        const tr = sec.querySelector('.fx-track'), st = sec.querySelector('.fx-stick') || sec;
+        sec._dist = reduce ? 0 : Math.max(0, Math.max(tr.offsetWidth, tr.scrollWidth) - st.clientWidth);
+        if (!reduce) sec.style.height = `calc(100svh + ${sec._dist}px)`;
+        sec._p = undefined;
+      });
+    }
+
+    function update() {
+      const vh = innerHeight;
+      pins.forEach(sec => {
+        const r = sec.getBoundingClientRect();
+        const p = reduce ? +(sec.dataset.rest || 1) : clamp(-r.top / Math.max(1, r.height - vh), 0, 1);
+        if (sec._p === p) return;
+        sec._p = p;
+        sec.style.setProperty('--p', p.toFixed(4));
+        sec.style.setProperty('--pe', smooth(p).toFixed(4));
+        if (sec._dist) sec.style.setProperty('--x', `${(-p * sec._dist).toFixed(1)}px`);
+      });
+      views.forEach(el => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--v', (reduce ? 0.5 : clamp((vh - r.top) / (vh + r.height), 0, 1)).toFixed(4));
+      });
+      stacks.forEach(list => {
+        const cards = [...list.children];
+        cards.forEach((c, i) => {
+          const next = cards[i + 1];
+          let v = 0;
+          if (next && !reduce) {
+            const top = c.getBoundingClientRect().top, h = c.offsetHeight;
+            v = clamp((top + h - next.getBoundingClientRect().top) / Math.max(1, h - 22), 0, 1);
+          }
+          c.style.setProperty('--c', v.toFixed(3));
+        });
+      });
+      seqs.forEach(draw);
+    }
+
+    // Aparición al entrar y números que cuentan.
+    const fmt = (v, d) => v.toLocaleString(lang, { minimumFractionDigits: d, maximumFractionDigits: d });
+    function count(el) {
+      const to = parseFloat(el.dataset.count), d = decimals(el.dataset.count);
+      if (reduce) { el.textContent = fmt(to, d); return; }
+      const t0 = performance.now(), D = +(el.dataset.ms || 1400);
+      const f = now => {
+        const t = clamp((now - t0) / D, 0, 1);
+        el.textContent = fmt(to * (1 - Math.pow(1 - t, 3)), d);
+        if (t < 1) requestAnimationFrame(f);
+      };
+      requestAnimationFrame(f);
+    }
+    if (!reduce) $$('[data-count]').forEach(el => (el.textContent = fmt(0, decimals(el.dataset.count))));
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      el.classList.add('is-in');
+      (el.matches('[data-count]') ? [el] : [...el.querySelectorAll('[data-count]')]).forEach(count);
+      io.unobserve(el);
+    }), { rootMargin: '0px 0px -12% 0px' });
+    $$('.fx-in, [data-count]').filter(el => el.matches('.fx-in') || !el.closest('.fx-in')).forEach(el => io.observe(el));
+
+    let queued = false;
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => { queued = false; update(); });
+    };
+    const onResize = () => { size(); seqs.forEach(s => (s.last = -1)); onScroll(); };
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    addEventListener('resize', onResize);
+    const ro = new ResizeObserver(onResize);
+    tracks.forEach(sec => ro.observe(sec.querySelector('.fx-track')));
+    if (document.fonts) document.fonts.ready.then(onResize);
+    size();
+    update();
+    return () => {
+      document.removeEventListener('scroll', onScroll, { capture: true });
+      removeEventListener('resize', onResize);
+      ro.disconnect();
+      io.disconnect();
+    };
+  }
+
+  window.Desplazamiento = { init };
+  const me = document.currentScript;
+  if (!(me && me.hasAttribute('data-manual'))) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => init(), { once: true });
+    else init();
+  }
+})();
+</script>
+</body>
+</html>

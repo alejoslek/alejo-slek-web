@@ -1,0 +1,17 @@
+# Reglas de seguridad que Netlify le manda al navegador con cada página.
+# - No dejar que otra web muestre esta adentro de un marco (evita engaños tipo "clickjacking").
+# - No adivinar tipos de archivo; mandar poca información a otras webs al salir.
+# - No pedir cámara, micrófono, ubicación ni pagos.
+# - Usar siempre HTTPS (el candadito).
+# - Cargar código, estilos, letras e imágenes sólo de esta web y de Google Fonts.
+#   Si un día sumás un mapa, un video o un widget de otra web, hay que agregar su dirección acá
+#   (si no, el navegador lo bloquea y en la consola aparece "Content-Security-Policy").
+# - frame-src: deja mostrar en un recuadro sólo la agenda de turnos de Google Calendar
+#   (la demo de la veterinaria en proyectos/turnos/). No carga código de Google en la página.
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=31536000
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src https://calendar.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests

@@ -1,0 +1,5 @@
+# Todos los buscadores pueden recorrer la web.
+User-agent: *
+Allow: /
+
+Sitemap: https://alejo-slek.netlify.app/sitemap.xml
