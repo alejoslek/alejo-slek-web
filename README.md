@@ -19,3 +19,6 @@ Es un sitio estático alojado en Netlify (plan gratis). Se sube la carpeta tal c
 
 ## Contacto
 Instagram: [@alejoslek](https://www.instagram.com/alejoslek/), o por mail desde la sección Contacto de la web.
+
+---
+© 2026 Alejo Slek. Todos los derechos reservados.
